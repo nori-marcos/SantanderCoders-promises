@@ -13,7 +13,7 @@ The coding challenge was proposed as follows:
 - The result must be presented in the page
   
 ## Technology used
-  -HTML
-  -JavaScript
-  -Bootstrap
+  - HTML
+  - JavaScript
+  - Bootstrap
   
