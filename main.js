@@ -3,6 +3,11 @@ btnCreateList.addEventListener("click", createList);
 
 const ul = document.querySelector("ul");
 
+const btnClearList = document.querySelectorAll("button")[1];
+btnClearList.addEventListener("click", function () {
+  ul.innerHTML = "";
+});
+
 function createArray() {
   const array = [];
   const arrayLength = Math.round(Math.random() * 10);
@@ -14,26 +19,30 @@ function createArray() {
   return array;
 }
 
-function delay(time) {
+function delayAndCreateArray(time) {
   return new Promise((resolve) => setTimeout(resolve(createArray()), time));
 }
 
 function createList() {
-  const listOfAllArrays = [];
+  const promise0 = delayAndCreateArray(5000);
+  const promise1 = delayAndCreateArray(3000);
+  const promise2 = delayAndCreateArray(2000);
 
-  const promise0 = delay(5000);
-  listOfAllArrays.push(promise0);
-
-  const promise1 = delay(6000);
-  listOfAllArrays.push(promise1);
-
-  const promise2 = delay(3000);
-  listOfAllArrays.push(promise2);
-
-  Promise.allSettled(listOfAllArrays).then((data) => {
+  Promise.allSettled([promise0, promise1, promise2]).then((data) => {
     console.log(data);
 
-    return data.map(function (object) {
+    const listOfAllArrays = [];
+
+    data.forEach(function (object) {
+      listOfAllArrays.push(object.value);
+    });
+
+    const resultDisplay = document.createElement("li");
+    resultDisplay.classList.add("list-group-item", "active");
+    resultDisplay.innerText = `Lista única: ${listOfAllArrays}`;
+    ul.append(resultDisplay);
+
+    data.map(function (object) {
       const resultDisplay = document.createElement("li");
       resultDisplay.className = "list-group-item";
       resultDisplay.innerText = object.value;
