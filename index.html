@@ -15,68 +15,24 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col text-center">
           <h1>Desafio Promises</h1>
           <p>Marcos Noriyuki Miyata</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col text-center">
           <button class="btn btn-primary btn-lg">Gerar Lista</button>
         </div>
       </div>
       <div class="row">
-        <div class="col-12"></div>
+        <div class="col">
+          <ul class="list-group list-group-flush"></ul>
+        </div>
       </div>
     </div>
 
-    <script>
-      const btnCreateList = document.querySelector("button");
-      btnCreateList.addEventListener("click", createList);
-
-      const rowWithResult = document.querySelectorAll("div.col-12")[2];
-
-      function createArray() {
-        const array = [];
-        const arrayLength = Math.round(Math.random() * 10);
-
-        for (let i = 0; i < arrayLength; i++) {
-          let item = Math.round(Math.random() * 10);
-          array.push(item);
-        }
-        return array;
-      }
-
-      function delay(time) {
-        return new Promise((resolve) =>
-          setTimeout(resolve(createArray()), time)
-        );
-      }
-
-      function createList() {
-        const listOfAllArrays = [];
-
-        const promise0 = delay(5000);
-        listOfAllArrays.push(promise0);
-
-        const promise1 = delay(6000);
-        listOfAllArrays.push(promise1);
-
-        const promise2 = delay(3000);
-        listOfAllArrays.push(promise2);
-
-        return Promise.allSettled(listOfAllArrays).then((object) => {
-          console.log(object);
-
-          const resultDisplay = document.createElement("p");
-
-          for (var property in object) {
-            resultDisplay.innerText = object.value;
-            rowWithResult.append(resultDisplay);
-          }
-        });
-      }
-    </script>
+    <script src="main.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
