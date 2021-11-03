@@ -12,7 +12,7 @@ The coding challenge was proposed as follows:
 -Each array must fulfill the random length with random numbers.
 -The result must be presented in the page
   
-##Technology used
+## Technology used
   -HTML
   -JavaScript
   -Bootstrap
