@@ -1,2 +1,4 @@
-# SantanderCoders-promises
-Project created to practice promises in JavaScript
+# Promises
+This project was created to practice promises in JavaScript.
+<br>
+Link: 
