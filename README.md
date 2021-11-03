@@ -1,7 +1,7 @@
 # Promises
 This project was proposed by the bootcamp programm Santander Coders, in order to practice promises in JavaScript.
 <br>
-Link: https://nori-marcos.github.io/SantanderCoders-promisesGenerator.github.io/
+Link: https://nori-marcos.github.io/SantanderCoders-promises.github.io/
 
 ## Description
 The coding challenge was proposed as follows:
